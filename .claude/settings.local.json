@@ -23,7 +23,8 @@
       "Bash(cd /opt/cloud/data && pwd && ls -la test_game.py && python3 test_game.py 2>&1)",
       "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)",
       "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git rm --cached id_rsa 2>/dev/null || true && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)",
-      "Bash(rm -rf src/__pycache__ && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)"
+      "Bash(rm -rf src/__pycache__ && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git commit -m \"$\\(cat <<'EOF'\nInitial commit: Tank Battle Game\n\nFeatures:\n- Beautiful pixel-style graphics with animations\n- Classic tank battle controls \\(WASD/Arrow keys + Space\\)\n- Multiple enemy types \\(Normal, Fast, Heavy\\)\n- Various terrain types \\(Brick, Steel, Water, Grass\\)\n- Explosion and smoke effects\n- Base protection gameplay\n- Multiple levels\n\nControls:\n- W/Up: Move up\n- S/Down: Move down\n- A/Left: Move left\n- D/Right: Move right\n- Space: Shoot\n- ESC/P: Pause\n\nBuild:\n- pip install -r requirements.txt\n- python main.py\n\nGitHub Actions:\n- Push tag v1.0.0 to auto-build and release\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []
