@@ -1,0 +1,83 @@
+"""
+Tank Battle Game Configuration
+游戏配置文件
+"""
+import pygame
+
+# Screen settings
+SCREEN_WIDTH = 1024
+SCREEN_HEIGHT = 768
+FPS = 60
+
+# Grid settings
+GRID_SIZE = 40  # 每个格子的大小
+GRID_COLS = SCREEN_WIDTH // GRID_SIZE
+GRID_ROWS = SCREEN_HEIGHT // GRID_SIZE
+
+# Colors
+COLOR_BLACK = (0, 0, 0)
+COLOR_WHITE = (255, 255, 255)
+COLOR_RED = (255, 0, 0)
+COLOR_GREEN = (0, 255, 0)
+COLOR_BLUE = (0, 100, 255)
+COLOR_YELLOW = (255, 215, 0)
+COLOR_GRAY = (128, 128, 128)
+COLOR_DARK_GREEN = (34, 139, 34)
+COLOR_BROWN = (139, 69, 19)
+COLOR_DARK_BROWN = (101, 67, 33)
+COLOR_LIGHT_BROWN = (205, 133, 63)
+COLOR_SAND = (238, 214, 169)
+COLOR_STEEL = (70, 130, 180)
+COLOR_DARK_STEEL = (50, 100, 150)
+COLOR_TANK_GREEN = (34, 139, 34)
+COLOR_TANK_GRAY = (169, 169, 169)
+COLOR_TANK_PLAYER = (255, 215, 0)  # Gold color for player
+COLOR_TANK_ENEMY = (220, 20, 60)   # Crimson for enemies
+COLOR_BULLET = (255, 255, 0)
+COLOR_EXPLOSION = (255, 69, 0)
+COLOR_WATER = (30, 144, 255)
+COLOR_BRICK = (178, 34, 34)
+COLOR_STONE = (105, 105, 105)
+
+# Directions
+UP = 0
+RIGHT = 1
+DOWN = 2
+LEFT = 3
+
+# Game states
+STATE_MENU = 0
+STATE_PLAYING = 1
+STATE_PAUSED = 2
+STATE_GAME_OVER = 3
+STATE_VICTORY = 4
+STATE_LEVEL_COMPLETE = 5
+
+# Player settings
+PLAYER_SPEED = 3
+PLAYER_BULLET_SPEED = 7
+PLAYER_MAX_BULLETS = 2
+PLAYER_HEALTH = 3
+
+# Enemy settings
+ENEMY_SPEED = 2
+ENEMY_BULLET_SPEED = 5
+ENEMY_SPAWN_INTERVAL = 3000  # milliseconds
+ENEMY_MAX_COUNT = 4
+ENEMY_HEALTH = 1
+
+# Bullet settings
+BULLET_DAMAGE = 1
+BULLET_SIZE = 6
+
+# Map settings
+MAP_FILE = "maps/level_01.json"
+MAX_ENEMIES_PER_LEVEL = 20
+
+# Key bindings - key codes
+KEY_MOVE_UP = [pygame.K_UP, pygame.K_w]
+KEY_MOVE_DOWN = [pygame.K_DOWN, pygame.K_s]
+KEY_MOVE_LEFT = [pygame.K_LEFT, pygame.K_a]
+KEY_MOVE_RIGHT = [pygame.K_RIGHT, pygame.K_d]
+KEY_SHOOT = [pygame.K_SPACE]
+KEY_PAUSE = [pygame.K_ESCAPE, pygame.K_p]

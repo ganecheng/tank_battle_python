@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(apt-get update:*)",
+      "Bash(apt-get install:*)",
+      "Bash(dnf install:*)",
+      "Bash(sudo dnf install:*)",
+      "Bash(x86_64-w64-mingw32-g++:*)",
+      "Bash(ls:*)",
+      "Bash(sudo sh:*)",
+      "Bash(x86_64-w64-mingw32-gcc:*)",
+      "Bash(x86_64-w64-mingw32-objdump:*)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git ls-remote origin 2>&1 | head -5)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git pull origin main 2>&1)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git ls-tree -r --name-only HEAD)",
+      "Bash(pip3 install pygame 2>&1 | tail -5)",
+      "Bash(cd /opt/cloud/data/src && python3 -c \"\nimport sys\nsys.path.insert\\(0, '.'\\)\nimport pygame\npygame.init\\(\\)\nfrom config import *\nfrom tank import PlayerTank, EnemyTank\nfrom bullet import Bullet\nfrom map import Map\nprint\\('All modules imported successfully!'\\)\nprint\\(f'Pygame version: {pygame.version.ver}'\\)\nprint\\(f'Screen size: {SCREEN_WIDTH}x{SCREEN_HEIGHT}'\\)\n\")",
+      "Bash(cd /opt/cloud/data && python3 test_game.py 2>&1)",
+      "Bash(python3 -c \"\nfrom bullet import Bullet\nfrom map import Obstacle\n\n# 创建测试对象\nobstacle = Obstacle\\(300, 100, 40, 40, 'brick'\\)\nbullet = Bullet\\(280, 120, 1, 'player'\\)  # RIGHT=1\n\nprint\\(f'Obstacle rect: {obstacle.get_rect\\(\\)}'\\)\nprint\\(f'Bullet rect: {bullet.rect}'\\)\nprint\\(f'Bullet pos: \\({bullet.x}, {bullet.y}\\)'\\)\n\nbullet.update\\(\\)\nprint\\(f'After update - Bullet pos: \\({bullet.x}, {bullet.y}\\)'\\)\nprint\\(f'After update - Bullet rect: {bullet.rect}'\\)\n\n# 检查碰撞\nprint\\(f'Collides: {bullet.collide_with_rect\\(obstacle.get_rect\\(\\)\\)}'\\)\n\")",
+      "Bash(python3 -c \"\nfrom bullet import Bullet\nfrom map import Obstacle\nfrom config import RIGHT\n\n# 创建测试对象 - 让子弹直接对着障碍物\nobstacle = Obstacle\\(300, 100, 40, 40, 'brick'\\)\nbullet = Bullet\\(250, 120, RIGHT, 'player'\\)  # 在障碍物左边\n\n# 多次更新让子弹飞到障碍物\nfor i in range\\(10\\):\n    bullet.update\\(\\)\n    print\\(f'Update {i}: Bullet pos=\\({bullet.x}, {bullet.y}\\), rect={bullet.rect}, collides={bullet.collide_with_rect\\(obstacle.get_rect\\(\\)\\)}'\\)\n    if bullet.collide_with_rect\\(obstacle.get_rect\\(\\)\\):\n        break\n\")",
+      "Bash(python3 test_game.py 2>&1)",
+      "Bash(pwd && ls -la test_game.py && python3 test_game.py 2>&1)",
+      "Bash(cd /opt/cloud/data && pwd && ls -la test_game.py && python3 test_game.py 2>&1)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)",
+      "Bash(GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git rm --cached id_rsa 2>/dev/null || true && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)",
+      "Bash(rm -rf src/__pycache__ && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git add -A && GIT_SSH_COMMAND=\"ssh -i /tmp/ssh_work/id_rsa -o StrictHostKeyChecking=no\" git status)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
