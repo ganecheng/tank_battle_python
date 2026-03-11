@@ -39,10 +39,7 @@ jobs:
     - name: Create release assets
       run: |
         cd dist
-        Compress-Archive -Path TankBattle.exe, TankBattle.exe.manifest -DestinationPath TankBattle_Windows.zip -ErrorAction SilentlyContinue
-        if (-not (Test-Path TankBattle_Windows.zip)) {
-          Compress-Archive -Path TankBattle.exe -DestinationPath TankBattle_Windows.zip
-        }
+        Compress-Archive -Path TankBattle.exe -DestinationPath TankBattle_Windows.zip -Force
       shell: pwsh
 
     - name: Upload release asset
